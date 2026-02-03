@@ -1,0 +1,15 @@
+DNS TXT Record for luvisof.shop
+================================
+
+TikTok Developers Site Verification
+------------------------------------
+Record Type: TXT
+Domain: luvisof.shop
+Value: tiktok-developers-site-verification=xjZna3i26HEbaLC6iBpx6ZdlOOKzaBl2
+
+Instructions:
+1. Go to your DNS provider's control panel
+2. Add a new TXT record
+3. Set the host/name to: @ (or leave blank for root domain)
+4. Set the value to: tiktok-developers-site-verification=xjZna3i26HEbaLC6iBpx6ZdlOOKzaBl2
+5. Save and wait for DNS propagation (usually 5-60 minutes)
