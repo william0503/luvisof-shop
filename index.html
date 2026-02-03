@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de SKUs - LuvisofShop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .welcome-section {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .welcome-section h2 {
+            color: #495057;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .welcome-section p {
+            color: #6c757d;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border-color: #667eea;
+        }
+
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            color: #495057;
+            font-size: 1.3em;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: #6c757d;
+            line-height: 1.6;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+
+        .links-section {
+            border-top: 2px solid #e9ecef;
+            padding-top: 40px;
+        }
+
+        .links-section h3 {
+            text-align: center;
+            color: #495057;
+            font-size: 1.5em;
+            margin-bottom: 25px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            display: inline-block;
+            padding: 14px 30px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid;
+        }
+
+        .nav-link.privacy {
+            background: #00a650;
+            color: white;
+            border-color: #00a650;
+        }
+
+        .nav-link.privacy:hover {
+            background: #008f45;
+            border-color: #008f45;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 166, 80, 0.3);
+        }
+
+        .nav-link.terms {
+            background: #3483fa;
+            color: white;
+            border-color: #3483fa;
+        }
+
+        .nav-link.terms:hover {
+            background: #2968c8;
+            border-color: #2968c8;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 131, 250, 0.3);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .header p {
+                font-size: 1em;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                flex-direction: column;
+            }
+
+            .nav-link {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🛍️ Gerenciador de SKUs</h1>
+            <p>Sistema Inteligente de Gestão de Produtos</p>
+        </div>
+
+        <div class="content">
+            <div class="welcome-section">
+                <h2>Bem-vindo ao LuvisofShop</h2>
+                <p>
+                    Gerencie seus produtos de forma eficiente e profissional. 
+                    Nossa plataforma oferece ferramentas completas para controle de SKUs, 
+                    estoque e integração com principais marketplaces.
+                </p>
+            </div>
+
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Gestão de SKUs</h3>
+                    <p>Controle completo de todos os seus produtos com códigos SKU únicos e organizados.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Relatórios Detalhados</h3>
+                    <p>Análises e relatórios em tempo real para tomadas de decisão estratégicas.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Integração Automática</h3>
+                    <p>Sincronização com Mercado Livre, Amazon e outras plataformas de vendas.</p>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <a href="#" class="cta-button">Começar Agora</a>
+            </div>
+
+            <div class="links-section">
+                <h3>Informações Legais</h3>
+                <div class="nav-links">
+                    <a href="privacy.html" class="nav-link privacy">📋 Política de Privacidade</a>
+                    <a href="terms.html" class="nav-link terms">📜 Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2026 LuvisofShop - Gerenciador de SKUs. Todos os direitos reservados.</p>
+        </div>
+    </div>
+</body>
+</html>
